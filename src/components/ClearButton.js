@@ -6,6 +6,8 @@ const ClearButton = ({ buttonVisible, clearCompleted }) => {
     return (state === true) ? 'clear-completed' : 'clear-completed hidden'
   }
 
+  /* не нужно писать такие длинные строчки кода
+   разбивай объявление пропсов на несколько линий */
   return (
     <button className={classes(buttonVisible)} onClick={clearCompleted}>Удалить завершенные</button>
   )

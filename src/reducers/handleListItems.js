@@ -11,6 +11,10 @@ const handleListItems = (state = [], action) => {
         }
       ]
     case 'DELETE_LISTITEM':
+      /* 
+        можно же короче написать
+        state.filter(item => item.id !== action.id)
+      */
       return state.filter((listItem) => {
         return listItem.id !== action.id;
       })
@@ -18,6 +22,7 @@ const handleListItems = (state = [], action) => {
       return state.map((listItem) => {
         if (listItem.id === action.id)
           return { ...listItem, completed: !listItem.completed }
+        /* зачем else ? */
         else
           return listItem;
       })
@@ -26,10 +31,12 @@ const handleListItems = (state = [], action) => {
         return state.map((listItem) => {
           if (listItem.id === action.id)
             return { ...listItem, text: action.text }
+          /* зачем else ? */          
           else {
             return listItem;
           }
         })
+      /* зачем else ? */      
       } else {
         return state.filter((listItem) => {
           return listItem.id !== action.id;
@@ -39,6 +46,7 @@ const handleListItems = (state = [], action) => {
       return state.map((listItem) => {
         if (listItem.id === action.id)
           return { ...listItem, isEditing: !listItem.isEditing }
+        /* зачем else ? */        
         else
           return listItem;
       })
@@ -47,6 +55,7 @@ const handleListItems = (state = [], action) => {
         if (action.switchState === true) {
           return { ...listItem, completed: true }
         }
+        /* зачем else ? */
         else {
           return { ...listItem, completed: false }
         }

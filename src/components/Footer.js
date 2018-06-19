@@ -6,7 +6,11 @@ import ClearButtonContainer from '../containers/ClearButtonContainer';
 import FilterContainer from '../containers/FilterContainer';
 
 const Footer = () => {
-
+  /* 
+    деструктурируй везде где это возможно
+    так код становиться более понятным и декларативным
+    конкретно здесь const { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } = filters
+  */
   return (
     <footer className="footer">
       <CounterContainer />

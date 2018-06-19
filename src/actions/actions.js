@@ -1,5 +1,17 @@
+/* 
+  придерживайся соглашения что action возвращает
+  объект типа 
+  {
+    type: 'SOME_ACTION',
+    payload: 'Action data'
+  }
+*/
 export const addListItem = (text) => ({
   type: 'ADD_LISTITEM',
+  /* 
+    не нужно никаой дополнительной логики, типо генерации id
+    делать в action. action - функция которая возвращает объект без каких-либо вычислений
+  */
   id: Date.now().toString(),
   text
 });

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 class Editor extends Component {
 
+  /* 
+    используй деструктуризацию props
+    const { isEditing, editItem, editItemConfirm, text } = this.props; 
+  */
   render() {
     if (this.props.isEditing) {
       return (
