@@ -12,9 +12,10 @@ class AddTodo extends Component {
   }
 
   addItem(event) {
-    let text = event.target.value;
+    const text = event.target.value;
+    const id = Date.now().toString();
     if (text !== '') {
-      this.props.dispatch(addListItem(text));
+      this.props.dispatch(addListItem(id, text));
       event.target.value = '';
     }
   }
@@ -33,7 +34,8 @@ class AddTodo extends Component {
         type="text"
         className="new-todo"
         placeholder="Что бы еще сделать?"
-        autoFocus />
+        autoFocus
+      />
     )
   }
 }

@@ -7,7 +7,11 @@ const ClearButton = ({ buttonVisible, clearCompleted }) => {
   }
 
   return (
-    <button className={classes(buttonVisible)} onClick={clearCompleted}>Удалить завершенные</button>
+    <button
+      className={classes(buttonVisible)}
+      onClick={clearCompleted}>
+      Удалить завершенные
+    </button>
   )
 }
 

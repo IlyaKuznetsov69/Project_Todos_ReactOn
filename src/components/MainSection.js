@@ -14,7 +14,7 @@ const MainSection = ({ itemsQuantity }) => {
         <Footer />
       </section>
     )
-  } else return null
+  } return null
 }
 
 export default MainSection;

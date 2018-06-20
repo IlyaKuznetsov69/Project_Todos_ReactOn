@@ -4,12 +4,12 @@ import { deleteAllCompleted } from '../actions/actions';
 import ClearButton from '../components/ClearButton';
 
 const getButtonState = (items) => {
-  let completedQuantity = (items.filter((item) => item.completed === true)).length
+  const completedQuantity = (items.filter((item) => item.completed === true)).length
   return (completedQuantity > 0) ? true : false
 }
 
-const mapStateToProps = (state) => ({
-  buttonVisible: getButtonState(state.listItems)
+const mapStateToProps = ({ listItems }) => ({
+  buttonVisible: getButtonState(listItems)
 })
 
 const mapDispatchToProps = (dispatch) => ({

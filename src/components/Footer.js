@@ -7,24 +7,26 @@ import FilterContainer from '../containers/FilterContainer';
 
 const Footer = () => {
 
+  const { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } = filters
+
   return (
     <footer className="footer">
       <CounterContainer />
       <ul className="filters">
         <FilterContainer
-          ownFilter={filters.SHOW_ALL}
+          ownFilter={SHOW_ALL}
           href="#/"
           className="filter all"
           text="Всего"
         />
         <FilterContainer
-          ownFilter={filters.SHOW_ACTIVE}
+          ownFilter={SHOW_ACTIVE}
           href="#/active"
           className="filter active"
           text="В процессе"
         />
         <FilterContainer
-          ownFilter={filters.SHOW_COMPLETED}
+          ownFilter={SHOW_COMPLETED}
           href="#/completed"
           className="filter compl"
           text="Завершено"

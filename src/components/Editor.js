@@ -3,18 +3,19 @@ import React, { Component } from 'react';
 class Editor extends Component {
 
   render() {
-    if (this.props.isEditing) {
+    const { isEditing, editItem, editItemConfirm, text } = this.props;
+    if (isEditing) {
       return (
         <input
-          onBlur={this.props.editItem}
-          onKeyPress={this.props.editItemConfirm}
+          onBlur={editItem}
+          onKeyPress={editItemConfirm}
           type="text"
           className="edit"
-          defaultValue={this.props.text}
+          defaultValue={text}
           ref={input => input && input.focus()}
         />
       )
-    } else return null
+    } return null
   }
 }
 

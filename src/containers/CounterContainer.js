@@ -6,8 +6,8 @@ const countItemsLeft = (items) => {
   return (items.filter((item) => item.completed === false)).length
 }
 
-const mapStateToProps = (state) => ({
-  itemsLeft: countItemsLeft(state.listItems)
+const mapStateToProps = ({ listItems }) => ({
+  itemsLeft: countItemsLeft(listItems)
 })
 
 export default connect(mapStateToProps, null)(Counter);

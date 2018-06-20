@@ -11,50 +11,37 @@ const handleListItems = (state = [], action) => {
         }
       ]
     case 'DELETE_LISTITEM':
-      return state.filter((listItem) => {
-        return listItem.id !== action.id;
-      })
+      return state.filter(listItem => listItem.id !== action.id);
     case 'TOGGLE_LISTITEM':
-      return state.map((listItem) => {
-        if (listItem.id === action.id)
+      return state.map(listItem => {
+        if (listItem.id === action.id) {
           return { ...listItem, completed: !listItem.completed }
-        else
-          return listItem;
-      })
+        } return listItem;
+      });
     case 'EDIT_LISTITEM':
       if (action.text !== '') {
-        return state.map((listItem) => {
-          if (listItem.id === action.id)
+        return state.map(listItem => {
+          if (listItem.id === action.id) {
             return { ...listItem, text: action.text }
-          else {
-            return listItem;
-          }
+          } return listItem;
         })
-      } else {
-        return state.filter((listItem) => {
-          return listItem.id !== action.id;
-        })
-      }
+      } return state.filter(listItem => listItem.id !== action.id);
     case 'CHANGE_LISTITEM_VIEW':
-      return state.map((listItem) => {
-        if (listItem.id === action.id)
+      return state.map(listItem => {
+        if (listItem.id === action.id) {
           return { ...listItem, isEditing: !listItem.isEditing }
-        else
-          return listItem;
-      })
+        } return listItem;
+      });
     case 'TOGGLE_ALL':
-      return state.map((listItem) => {
+      return state.map(listItem => {
         if (action.switchState === true) {
           return { ...listItem, completed: true }
-        }
-        else {
-          return { ...listItem, completed: false }
-        }
-      })
+        } return { ...listItem, completed: false }
+      });
     case 'DELETE_ALL_COMPLETED':
-      return state.filter((listItem) => listItem.completed === false)
+      return state.filter(listItem => listItem.completed === false);
     default:
-      return state
+      return state;
   }
 }
 

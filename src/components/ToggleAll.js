@@ -1,16 +1,16 @@
 import React from 'react';
 
-const ToggleAll = ({ togglerState, toggle }) => {
+const ToggleAll = ({ togglerChecked, toggle }) => {
 
   return (
     <div>
       <input
         className="toggle-all"
         type="checkbox"
-        checked={togglerState}
+        checked={togglerChecked}
         onChange={toggle}
       />
-      <label className="for_toggle-all" />
+      <label className="for-toggle-all" />
     </div>
   )
 }

@@ -1,6 +1,6 @@
-export const addListItem = (text) => ({
+export const addListItem = (id, text) => ({
   type: 'ADD_LISTITEM',
-  id: Date.now().toString(),
+  id,
   text
 });
 

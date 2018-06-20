@@ -4,15 +4,15 @@ import ToggleAll from '../components/ToggleAll';
 import { toggleAllItems } from '../actions/actions';
 
 const getTogglerState = (items) => {
-  let totalQuantity = items.length;
-  let completedQuantity = (items.filter(item => item.completed)).length;
+  const totalQuantity = items.length;
+  const completedQuantity = (items.filter(item => item.completed)).length;
   if (totalQuantity === 0) {
     return false
-  } else return totalQuantity === completedQuantity
+  } return totalQuantity === completedQuantity
 }
 
-const mapStateToProps = (state) => ({
-  togglerState: getTogglerState(state.listItems)
+const mapStateToProps = ({ listItems }) => ({
+  togglerChecked: getTogglerState(listItems)
 })
 
 const mapDispatchToProps = (dispatch) => ({
